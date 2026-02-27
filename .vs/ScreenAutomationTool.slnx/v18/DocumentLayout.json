@@ -1,0 +1,274 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\services\\automationengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\services\\automationengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\interfaces\\iautomationengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\interfaces\\iautomationengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\interfaces\\iscreencaptureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\interfaces\\iscreencaptureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\services\\screencaptureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\services\\screencaptureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\services\\textfinderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\services\\textfinderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\interfaces\\itextfinderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\interfaces\\itextfinderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\services\\inputsimulatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\services\\inputsimulatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\forms\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\forms\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\screenautomationtool\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\models\\textmatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\models\\textmatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\configuration\\automationsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\configuration\\automationsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\helpers\\nativemethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\helpers\\nativemethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|c:\\users\\sabir sultanov\\source\\repos\\screenautomationtool\\screenautomationtool\\interfaces\\iinputsimulatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04F371EC-7559-4285-8FD3-A513F318B4C4}|ScreenAutomationTool\\ScreenAutomationTool.csproj|solutionrelative:screenautomationtool\\interfaces\\iinputsimulatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AutomationEngine.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Services\\AutomationEngine.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Services\\AutomationEngine.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Services\\AutomationEngine.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Services\\AutomationEngine.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAqwF0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:52:40.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ScreenCaptureService.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Services\\ScreenCaptureService.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Services\\ScreenCaptureService.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Services\\ScreenCaptureService.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Services\\ScreenCaptureService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:52:03.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TextFinderService.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Services\\TextFinderService.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Services\\TextFinderService.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Services\\TextFinderService.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Services\\TextFinderService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAvwDwAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:52:29.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Mainform.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Forms\\Mainform.Designer.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Forms\\Mainform.Designer.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Forms\\Mainform.Designer.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Forms\\Mainform.Designer.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAKcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:48:05.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Mainform.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Forms\\Mainform.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Forms\\Mainform.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Forms\\Mainform.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Forms\\Mainform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:48:13.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ITextFinderService.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Interfaces\\ITextFinderService.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Interfaces\\ITextFinderService.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Interfaces\\ITextFinderService.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Interfaces\\ITextFinderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:51:39.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IAutomationEngine.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Interfaces\\IAutomationEngine.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Interfaces\\IAutomationEngine.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Interfaces\\IAutomationEngine.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Interfaces\\IAutomationEngine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:51:51.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IScreenCaptureService.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Interfaces\\IScreenCaptureService.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Interfaces\\IScreenCaptureService.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Interfaces\\IScreenCaptureService.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Interfaces\\IScreenCaptureService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:56:39.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InputSimulatorService.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Services\\InputSimulatorService.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Services\\InputSimulatorService.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Services\\InputSimulatorService.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Services\\InputSimulatorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:52:16.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Mainform.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Forms\\Mainform.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Forms\\Mainform.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Forms\\Mainform.cs [Design]",
+              "RelativeToolTip": "ScreenAutomationTool\\Forms\\Mainform.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:46:59.696Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Program.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Program.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Program.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:47:46.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TextMatch.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Models\\TextMatch.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Models\\TextMatch.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Models\\TextMatch.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Models\\TextMatch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:50:41.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AutomationSettings.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Configuration\\AutomationSettings.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Configuration\\AutomationSettings.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Configuration\\AutomationSettings.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Configuration\\AutomationSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:50:18.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NativeMethods.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Helpers\\NativeMethods.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Helpers\\NativeMethods.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Helpers\\NativeMethods.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Helpers\\NativeMethods.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:50:55.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IInputSimulatorService.cs",
+              "DocumentMoniker": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Interfaces\\IInputSimulatorService.cs",
+              "RelativeDocumentMoniker": "ScreenAutomationTool\\Interfaces\\IInputSimulatorService.cs",
+              "ToolTip": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\Interfaces\\IInputSimulatorService.cs",
+              "RelativeToolTip": "ScreenAutomationTool\\Interfaces\\IInputSimulatorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T18:51:25.404Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

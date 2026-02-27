@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "hIQWz3CPHqE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Sabir Sultanov\\source\\repos\\ScreenAutomationTool\\ScreenAutomationTool\\ScreenAutomationTool.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sabir Sultanov\\.nuget\\packages\\opencvsharp4\\4.13.0.20260226\\opencvsharp4.4.13.0.20260226.nupkg.sha512",
+    "C:\\Users\\Sabir Sultanov\\.nuget\\packages\\opencvsharp4.runtime.win\\4.13.0.20260226\\opencvsharp4.runtime.win.4.13.0.20260226.nupkg.sha512",
+    "C:\\Users\\Sabir Sultanov\\.nuget\\packages\\tesseract\\5.2.0\\tesseract.5.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
