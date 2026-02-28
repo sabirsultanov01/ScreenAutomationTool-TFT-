@@ -94,12 +94,14 @@ public sealed class StrategyEngine
         if (state.Gold < 4)
             return false;
 
+        // Aggressive / fast leveling: buy XP every tick as long as
+        // spending 4 g still leaves us above the economy floor.
+        if (_aggressiveLeveling)
+            return state.Gold - 4 > _econFloor;
+
+        // Standard leveling: follow the per-stage curve.
         int target = GetTargetLevel(state.Stage, state.Level);
-
         if (state.Level < target && state.Gold >= LevelGoldThreshold(state.Level))
-            return true;
-
-        if (_aggressiveLeveling && state.Gold >= _econFloor + 4)
             return true;
 
         return false;

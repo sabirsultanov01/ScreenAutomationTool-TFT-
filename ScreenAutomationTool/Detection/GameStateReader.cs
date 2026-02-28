@@ -36,11 +36,12 @@ public sealed class GameStateReader : IDisposable
 
     /// <summary>
     /// Saves an annotated screenshot (all regions drawn as coloured
-    /// rectangles) plus individual crops to <paramref name="outputDir"/>.
+    /// rectangles), individual crops, <b>and</b> a text file with the
+    /// OCR results for every champion-name slot to <paramref name="outputDir"/>.
     /// Use this to verify that every region is aimed at the correct
     /// HUD element, then adjust <see cref="TFTRegions"/> as needed.
     /// </summary>
-    public static void SaveDebugCapture(Bitmap screenshot, string outputDir = "debug")
+    public void SaveDebugCapture(Bitmap screenshot, string outputDir = "debug")
     {
         Directory.CreateDirectory(outputDir);
 
@@ -60,7 +61,7 @@ public sealed class GameStateReader : IDisposable
             for (int i = 0; i < 5; i++)
             {
                 DrawRect(g, TFTRegions.ShopNames[i], $"Name{i + 1}", Color.Orange);
-                DrawRect(g, TFTRegions.ShopCosts[i], $"Cost{i + 1}", Color.Coral);
+                DrawRect(g, TFTRegions.ShopCosts[i], $"Cost{i + 1}", Color.Orange);
             }
 
             annotated.Save(Path.Combine(outputDir, "annotated.png"));
@@ -79,6 +80,29 @@ public sealed class GameStateReader : IDisposable
             SaveCrop(screenshot, TFTRegions.ShopNames[i], outputDir, $"shop_name_{i + 1}.png");
             SaveCrop(screenshot, TFTRegions.ShopCosts[i], outputDir, $"shop_cost_{i + 1}.png");
         }
+
+        // ── OCR results text file ───────────────────────────────────
+        var lines = new List<string>
+        {
+            $"Gold:      {ReadInt(screenshot, TFTRegions.Gold)}",
+            $"Level:     {ReadInt(screenshot, TFTRegions.Level)}",
+            $"Health:    {ReadInt(screenshot, TFTRegions.Health)}",
+            $"XP:        {ReadInt(screenshot, TFTRegions.XpCurrent)} / {ReadInt(screenshot, TFTRegions.XpNeeded)}",
+            $"Stage:     {ReadStage(screenshot)}",
+            "",
+        };
+
+        for (int i = 0; i < 5; i++)
+        {
+            using var nameCrop = CropRegion(screenshot, TFTRegions.ShopNames[i]);
+            using var costCrop = CropRegion(screenshot, TFTRegions.ShopCosts[i]);
+
+            var name = _ocr.ReadChampionName(nameCrop);
+            var cost = _ocr.ReadNumber(costCrop);
+            lines.Add($"Shop slot {i + 1}:  \"{name}\"  (cost: {cost})");
+        }
+
+        File.WriteAllLines(Path.Combine(outputDir, "ocr_results.txt"), lines);
     }
 
     // ── Private helpers ─────────────────────────────────────────────────
