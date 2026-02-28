@@ -17,6 +17,7 @@ public sealed class BotEngine : IDisposable
     private readonly InputController      _input;
     private readonly StrategyEngine       _strategy;
     private CancellationTokenSource?      _cts;
+    private bool                          _debugSaved;
 
     public event Action<string>?    OnLog;
     public event Action<GameState>? OnStateUpdate;
@@ -49,6 +50,15 @@ public sealed class BotEngine : IDisposable
             while (!ct.IsCancellationRequested)
             {
                 using var screenshot = _capture.CaptureScreen();
+
+                if (!_debugSaved)
+                {
+                    var debugDir = Path.GetFullPath("debug");
+                    GameStateReader.SaveDebugCapture(screenshot, debugDir);
+                    Log($"Debug region images saved to: {debugDir}");
+                    _debugSaved = true;
+                }
+
                 var state = _reader.Read(screenshot);
                 OnStateUpdate?.Invoke(state);
 

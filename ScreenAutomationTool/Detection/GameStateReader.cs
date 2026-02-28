@@ -32,6 +32,55 @@ public sealed class GameStateReader : IDisposable
         };
     }
 
+    // ── Debug / calibration ─────────────────────────────────────────────
+
+    /// <summary>
+    /// Saves an annotated screenshot (all regions drawn as coloured
+    /// rectangles) plus individual crops to <paramref name="outputDir"/>.
+    /// Use this to verify that every region is aimed at the correct
+    /// HUD element, then adjust <see cref="TFTRegions"/> as needed.
+    /// </summary>
+    public static void SaveDebugCapture(Bitmap screenshot, string outputDir = "debug")
+    {
+        Directory.CreateDirectory(outputDir);
+
+        // ── Annotated full screenshot ───────────────────────────────
+        using (var annotated = new Bitmap(screenshot))
+        {
+            using var g = Graphics.FromImage(annotated);
+
+            DrawRect(g, TFTRegions.Gold,      "Gold",  Color.Yellow);
+            DrawRect(g, TFTRegions.Level,     "Level", Color.Cyan);
+            DrawRect(g, TFTRegions.Health,    "HP",    Color.Red);
+            DrawRect(g, TFTRegions.Stage,     "Stage", Color.Magenta);
+            DrawRect(g, TFTRegions.XpCurrent, "XP",    Color.LimeGreen);
+            DrawRect(g, TFTRegions.XpNeeded,  "XP2",   Color.LimeGreen);
+            DrawRect(g, TFTRegions.PhaseRegion, "Phase", Color.White);
+
+            for (int i = 0; i < 5; i++)
+            {
+                DrawRect(g, TFTRegions.ShopNames[i], $"Name{i + 1}", Color.Orange);
+                DrawRect(g, TFTRegions.ShopCosts[i], $"Cost{i + 1}", Color.Coral);
+            }
+
+            annotated.Save(Path.Combine(outputDir, "annotated.png"));
+        }
+
+        // ── Individual region crops ─────────────────────────────────
+        SaveCrop(screenshot, TFTRegions.Gold,      outputDir, "gold.png");
+        SaveCrop(screenshot, TFTRegions.Level,     outputDir, "level.png");
+        SaveCrop(screenshot, TFTRegions.Health,    outputDir, "health.png");
+        SaveCrop(screenshot, TFTRegions.Stage,     outputDir, "stage.png");
+        SaveCrop(screenshot, TFTRegions.XpCurrent, outputDir, "xp_current.png");
+        SaveCrop(screenshot, TFTRegions.XpNeeded,  outputDir, "xp_needed.png");
+
+        for (int i = 0; i < 5; i++)
+        {
+            SaveCrop(screenshot, TFTRegions.ShopNames[i], outputDir, $"shop_name_{i + 1}.png");
+            SaveCrop(screenshot, TFTRegions.ShopCosts[i], outputDir, $"shop_cost_{i + 1}.png");
+        }
+    }
+
     // ── Private helpers ─────────────────────────────────────────────────
 
     private int ReadInt(Bitmap screenshot, Rectangle region)
@@ -103,6 +152,29 @@ public sealed class GameStateReader : IDisposable
         int h = Math.Min(region.Height, source.Height - y);
 
         return source.Clone(new Rectangle(x, y, w, h), source.PixelFormat);
+    }
+
+    // ── Debug drawing helpers ───────────────────────────────────────────
+
+    private static void DrawRect(Graphics g, Rectangle r, string label, Color color)
+    {
+        using var pen   = new Pen(color, 2);
+        using var font  = new Font("Arial", 10, FontStyle.Bold);
+        using var brush = new SolidBrush(color);
+
+        g.DrawRectangle(pen, r);
+        g.DrawString(label, font, brush, r.X, Math.Max(0, r.Y - 16));
+    }
+
+    private static void SaveCrop(Bitmap source, Rectangle region, string dir, string name)
+    {
+        int x = Math.Clamp(region.X, 0, source.Width  - 1);
+        int y = Math.Clamp(region.Y, 0, source.Height - 1);
+        int w = Math.Min(region.Width,  source.Width  - x);
+        int h = Math.Min(region.Height, source.Height - y);
+
+        using var crop = source.Clone(new Rectangle(x, y, w, h), source.PixelFormat);
+        crop.Save(Path.Combine(dir, name));
     }
 
     public void Dispose()
