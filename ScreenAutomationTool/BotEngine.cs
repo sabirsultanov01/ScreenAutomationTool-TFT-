@@ -54,7 +54,7 @@ public sealed class BotEngine : IDisposable
                 if (!_debugSaved)
                 {
                     var debugDir = Path.GetFullPath("debug");
-                    GameStateReader.SaveDebugCapture(screenshot, debugDir);
+                    _reader.SaveDebugCapture(screenshot, debugDir);
                     Log($"Debug region images saved to: {debugDir}");
                     _debugSaved = true;
                 }
