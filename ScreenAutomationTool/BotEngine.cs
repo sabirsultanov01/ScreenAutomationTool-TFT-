@@ -43,6 +43,11 @@ public sealed class BotEngine : IDisposable
         _cts = new CancellationTokenSource();
         var ct = _cts.Token;
 
+        var bounds = System.Windows.Forms.Screen.PrimaryScreen!.Bounds;
+        Log($"Screen: {bounds.Width}x{bounds.Height}");
+        if (bounds.Width != 1920 || bounds.Height != 1080)
+            Log("WARNING: TFT regions are calibrated for 1920x1080!");
+
         Log("Bot started — entering main loop.");
 
         try

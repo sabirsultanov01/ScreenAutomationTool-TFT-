@@ -12,54 +12,51 @@ public static class TFTRegions
 {
     // ── HUD readouts (OCR source rectangles) ────────────────────────────
     //
-    // The bottom HUD line sits at roughly y ≈ 876.
-    // "Lvl. 3  4/6  75% …"  then gold in the center.
-    //
-    // Level number:  skip past "Lvl. " (~35 px) so OCR sees only the digit.
-    // Gold number:   sits to the right of the gold-coin icon, centre-bottom.
+    // LEVEL — we use a WIDE region covering "Lvl. X  XP/XP" and parse
+    //   the level out with a regex, avoiding the pixel-exact-crop problem.
+    // GOLD  — sits right of the coin icon, centre-bottom of the HUD.
 
-    public static readonly Rectangle Gold       = new(942, 876, 50, 22);
-    public static readonly Rectangle Level      = new(352, 876, 22, 22);
-    public static readonly Rectangle XpCurrent  = new(382, 876, 20, 22);
-    public static readonly Rectangle XpNeeded   = new(408, 876, 20, 22);
-    public static readonly Rectangle Health     = new(180, 876, 40, 22);  // TODO: calibrate
-    public static readonly Rectangle Stage      = new(770, 6, 65, 24);
+    public static readonly Rectangle LevelWide = new(240, 868, 170, 28);
+    public static readonly Rectangle Gold      = new(920, 868, 65, 28);
+    public static readonly Rectangle Health    = new(180, 868, 40, 28);  // TODO: calibrate
+    public static readonly Rectangle Stage     = new(770, 6, 65, 24);
 
     // ── Phase / timer region at top-center ──────────────────────────────
 
     public static readonly Rectangle PhaseRegion = new(754, 0, 160, 36);
 
     // ── Shop champion-name text regions (5 slots, left → right) ─────────
+    //   y shifted to 1048 to align with actual name text at bottom of cards.
 
     public static readonly Rectangle[] ShopNames =
     [
-        new(378,  1026, 140, 22),
-        new(608,  1026, 140, 22),
-        new(838,  1026, 140, 22),
-        new(1068, 1026, 140, 22),
-        new(1298, 1026, 140, 22),
+        new(378,  1048, 150, 26),
+        new(608,  1048, 150, 26),
+        new(838,  1048, 150, 26),
+        new(1068, 1048, 150, 26),
+        new(1298, 1048, 150, 26),
     ];
 
     // ── Shop champion-cost text regions ─────────────────────────────────
 
     public static readonly Rectangle[] ShopCosts =
     [
-        new(425,  1050, 30, 18),
-        new(655,  1050, 30, 18),
-        new(885,  1050, 30, 18),
-        new(1115, 1050, 30, 18),
-        new(1345, 1050, 30, 18),
+        new(520,  1052, 25, 20),
+        new(660,  1052, 25, 20),
+        new(900,  1052, 25, 20),
+        new(1130, 1052, 25, 20),
+        new(1360, 1052, 25, 20),
     ];
 
     // ── Click targets: center of each shop card ─────────────────────────
 
     public static readonly Point[] ShopSlotCenters =
     [
-        new(448,  1000),
-        new(678,  1000),
-        new(908,  1000),
-        new(1138, 1000),
-        new(1368, 1000),
+        new(448,  990),
+        new(678,  990),
+        new(908,  990),
+        new(1138, 990),
+        new(1368, 990),
     ];
 
     // ── Buttons ─────────────────────────────────────────────────────────

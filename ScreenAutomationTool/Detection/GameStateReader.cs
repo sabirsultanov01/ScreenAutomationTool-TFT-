@@ -1,4 +1,5 @@
 using System.Drawing;
+using System.Text.RegularExpressions;
 using ScreenAutomationTool.Core;
 
 namespace ScreenAutomationTool.Detection;
@@ -7,7 +8,7 @@ namespace ScreenAutomationTool.Detection;
 /// Reads the full TFT game state from a single 1920×1080 screenshot
 /// by cropping HUD regions and running them through <see cref="OcrService"/>.
 /// </summary>
-public sealed class GameStateReader : IDisposable
+public sealed partial class GameStateReader : IDisposable
 {
     private readonly OcrService _ocr;
 
@@ -20,11 +21,9 @@ public sealed class GameStateReader : IDisposable
     {
         return new GameState
         {
-            Gold      = ReadInt(screenshot, TFTRegions.Gold),
-            Level     = ReadInt(screenshot, TFTRegions.Level),
+            Gold      = ReadGold(screenshot),
+            Level     = ReadLevel(screenshot),
             Health    = ReadInt(screenshot, TFTRegions.Health),
-            XpCurrent = ReadInt(screenshot, TFTRegions.XpCurrent),
-            XpNeeded  = ReadInt(screenshot, TFTRegions.XpNeeded),
             Stage     = ReadStage(screenshot),
             Phase     = DetectPhase(screenshot),
             Shop      = ReadShop(screenshot),
@@ -38,8 +37,7 @@ public sealed class GameStateReader : IDisposable
     /// Saves an annotated screenshot (all regions drawn as coloured
     /// rectangles), individual crops, <b>and</b> a text file with the
     /// OCR results for every champion-name slot to <paramref name="outputDir"/>.
-    /// Use this to verify that every region is aimed at the correct
-    /// HUD element, then adjust <see cref="TFTRegions"/> as needed.
+    /// Also records the screen resolution so we can verify it's 1920×1080.
     /// </summary>
     public void SaveDebugCapture(Bitmap screenshot, string outputDir = "debug")
     {
@@ -51,17 +49,15 @@ public sealed class GameStateReader : IDisposable
             using var g = Graphics.FromImage(annotated);
 
             DrawRect(g, TFTRegions.Gold,      "Gold",  Color.Yellow);
-            DrawRect(g, TFTRegions.Level,     "Level", Color.Cyan);
+            DrawRect(g, TFTRegions.LevelWide, "Level", Color.Cyan);
             DrawRect(g, TFTRegions.Health,    "HP",    Color.Red);
             DrawRect(g, TFTRegions.Stage,     "Stage", Color.Magenta);
-            DrawRect(g, TFTRegions.XpCurrent, "XP",    Color.LimeGreen);
-            DrawRect(g, TFTRegions.XpNeeded,  "XP2",   Color.LimeGreen);
             DrawRect(g, TFTRegions.PhaseRegion, "Phase", Color.White);
 
             for (int i = 0; i < 5; i++)
             {
                 DrawRect(g, TFTRegions.ShopNames[i], $"Name{i + 1}", Color.Orange);
-                DrawRect(g, TFTRegions.ShopCosts[i], $"Cost{i + 1}", Color.Orange);
+                DrawRect(g, TFTRegions.ShopCosts[i], $"Cost{i + 1}", Color.Coral);
             }
 
             annotated.Save(Path.Combine(outputDir, "annotated.png"));
@@ -69,11 +65,9 @@ public sealed class GameStateReader : IDisposable
 
         // ── Individual region crops ─────────────────────────────────
         SaveCrop(screenshot, TFTRegions.Gold,      outputDir, "gold.png");
-        SaveCrop(screenshot, TFTRegions.Level,     outputDir, "level.png");
+        SaveCrop(screenshot, TFTRegions.LevelWide, outputDir, "level_wide.png");
         SaveCrop(screenshot, TFTRegions.Health,    outputDir, "health.png");
         SaveCrop(screenshot, TFTRegions.Stage,     outputDir, "stage.png");
-        SaveCrop(screenshot, TFTRegions.XpCurrent, outputDir, "xp_current.png");
-        SaveCrop(screenshot, TFTRegions.XpNeeded,  outputDir, "xp_needed.png");
 
         for (int i = 0; i < 5; i++)
         {
@@ -84,11 +78,15 @@ public sealed class GameStateReader : IDisposable
         // ── OCR results text file ───────────────────────────────────
         var lines = new List<string>
         {
-            $"Gold:      {ReadInt(screenshot, TFTRegions.Gold)}",
-            $"Level:     {ReadInt(screenshot, TFTRegions.Level)}",
+            $"Screenshot: {screenshot.Width}x{screenshot.Height}",
+            $"",
+            $"Gold:      {ReadGold(screenshot)}",
+            $"Level:     {ReadLevel(screenshot)}",
             $"Health:    {ReadInt(screenshot, TFTRegions.Health)}",
-            $"XP:        {ReadInt(screenshot, TFTRegions.XpCurrent)} / {ReadInt(screenshot, TFTRegions.XpNeeded)}",
             $"Stage:     {ReadStage(screenshot)}",
+            $"",
+            $"LevelWide raw OCR: \"{ReadWideText(screenshot, TFTRegions.LevelWide)}\"",
+            $"Gold raw OCR:      \"{ReadWideText(screenshot, TFTRegions.Gold)}\"",
             "",
         };
 
@@ -105,12 +103,49 @@ public sealed class GameStateReader : IDisposable
         File.WriteAllLines(Path.Combine(outputDir, "ocr_results.txt"), lines);
     }
 
+    // ── Specialised readers ─────────────────────────────────────────────
+
+    /// <summary>
+    /// Reads the level from a WIDE crop covering "Lvl. X  XP/XP".
+    /// Uses general-purpose OCR then regex-extracts the first number 1-10.
+    /// This avoids the fragile "crop exactly one digit" approach.
+    /// </summary>
+    private int ReadLevel(Bitmap screenshot)
+    {
+        using var crop = CropRegion(screenshot, TFTRegions.LevelWide);
+        var text = _ocr.ReadText(crop);
+
+        // The text typically looks like "Lvl. 6 18/36" or "Lv 6 18 36".
+        // Extract all numbers and return the first one in the 1-10 range.
+        foreach (Match m in NumberPattern().Matches(text))
+        {
+            if (int.TryParse(m.Value, out int n) && n >= 1 && n <= 10)
+                return n;
+        }
+
+        return -1;
+    }
+
+    /// <summary>
+    /// Reads gold from the gold region using digit-only OCR.
+    /// </summary>
+    private int ReadGold(Bitmap screenshot)
+    {
+        return ReadInt(screenshot, TFTRegions.Gold);
+    }
+
     // ── Private helpers ─────────────────────────────────────────────────
 
     private int ReadInt(Bitmap screenshot, Rectangle region)
     {
         using var crop = CropRegion(screenshot, region);
         return _ocr.ReadNumber(crop);
+    }
+
+    private string ReadWideText(Bitmap screenshot, Rectangle region)
+    {
+        using var crop = CropRegion(screenshot, region);
+        return _ocr.ReadText(crop);
     }
 
     private string ReadStage(Bitmap screenshot)
@@ -200,6 +235,9 @@ public sealed class GameStateReader : IDisposable
         using var crop = source.Clone(new Rectangle(x, y, w, h), source.PixelFormat);
         crop.Save(Path.Combine(dir, name));
     }
+
+    [GeneratedRegex(@"\d+")]
+    private static partial Regex NumberPattern();
 
     public void Dispose()
     {
